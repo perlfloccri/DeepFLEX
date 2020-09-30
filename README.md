@@ -4,10 +4,10 @@
 
 DeepFLEX is a semi-automated, deep learning-based pipeline for unsupervised single-cell analysis of MELC (Multi-Epitope Ligand Cartography) imaging data. The pipeline integrates methods for image processing and segmentation, feature extraction, normalization and single-cell analysis that were recently published by our group [1], [2] and other experts in the field [3], [4], [5]. 
 
-[*Daria Lazic, Florian Kromp, Filip Mivalt, Fikret Rifatbegovic, Florian Halbritter, Inge Ambros, Peter Ambros, Christian Ostalecki, Sabine Taschner-Mandl*  
-**Unraveling the landscape of bone marrow metastases in pediatric cancer at single cell resolution**](https://arxiv.org/)
+[*Daria Lazic, Florian Kromp et al.*  
+**Single-cell landscape of bone marrow metastases in human neuroblastoma unraveled by deep multiplex imaging**](https://arxiv.org/)
 
-![Semantic description of image](/deepflex.jpg "Image Title")  
+![Semantic description of image](/deepflex.jpg "Image Title" | width=25)  
     
 **Contact:** Daria Lazic ([daria.lazic@ccri.at](mailto:daria.lazic@ccri.at))
 
@@ -17,7 +17,8 @@ A detailed description and demonstration on how to run the pipeline is provided 
 
 ## Data availability
 
-Download the MELC imaging data of our 8 samples [here](https://cloud.stanna.at/sharing/gDdiRiSxs).
+Download the MELC imaging data of our 8 samples [here](https://cloud.stanna.at/sharing/qiN0u9QPO).
+A compiled release with all necessary dependencies pre-installed is available from [dockerhub](https://hub.docker.com/repository/docker/imageprocessing29092020/deepflex).	
 
 ## Installation
 
