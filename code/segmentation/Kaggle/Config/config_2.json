@@ -1,0 +1,1 @@
+{"results_folder": "/root/flo/tmp", "overlap_train": null, "scaled": null, "dataset_dirs_train": null, "dataset": "segmentSample", "dataset_dirs_test": "/root/flo/tmp", "traintestmode": "test", "overlap_test": null, "net_description": "specific_maskrcnn_artificialandnaturalnuclei_dataset_scaled_10000_2000", "netinfo": "maskrcnn", "dataset_dirs_val": null, "max_epochs": 100}
