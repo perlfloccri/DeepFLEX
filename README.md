@@ -24,6 +24,7 @@ A compiled release with all necessary dependencies pre-installed is available fr
 
 ## Requirements
 
+All requirements can be found [here](https://github.com/perlfloccri/DeepFLEX/tree/master/required_prerequisites).
 
 ## Installation
 
