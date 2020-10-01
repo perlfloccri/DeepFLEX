@@ -51,7 +51,7 @@ Kromp, F. et al. (2019).
 Deep Learning architectures for generalized immunofluorescence based nuclear image segmentation. 
 arXiv.  
 <a id="1">[[4]](https://www.nature.com/articles/s41597-020-00608-w)</a> 
-Florian, K. et al. (2020). 
+Kromp, F. et al. (2020). 
 An annotated fluorescence image dataset for training nuclear segmentation methods. 
 Scientific Data, 7, 262.  
 <a id="1">[[5]](https://onlinelibrary.wiley.com/doi/full/10.1002/mrm.20426)</a> 
