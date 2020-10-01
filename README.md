@@ -7,10 +7,8 @@ DeepFLEX is a semi-automated, deep learning-based pipeline for unsupervised sing
 [Daria Lazic, Florian Kromp et al.  
 **Single-cell landscape of bone marrow metastases in human neuroblastoma unraveled by deep multiplex imaging**](https://www.biorxiv.org/content/10.1101/2020.09.30.321539v1)
 
-![test image size](/deepflex.jpg){:class="img-responsive"}
-![test image size](/deepflex.jpg){:height="50%" width="50%"}
-![test image size](/deepflex.jpg){:height="700px" width="400px"}
--->![Semantic description of image](/deepflex.jpg)  
+![test image size](/deepflex.jpg){:height="20%" width="20%"}
+
     
 **Contact:** Daria Lazic ([daria.lazic@ccri.at](mailto:daria.lazic@ccri.at))
 
