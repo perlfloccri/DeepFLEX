@@ -14,9 +14,9 @@ Deep learning-based single-cell analysis pipeline for FLuorescence multiplEX ima
 ## Content
 
 The pipeline is based on methods for:  
--image processing (registration, flat-field correction and retrospective multi-image illumination correction by CIDRE [2])    
+-image processing (registration, flat-field correction, retrospective multi-image illumination correction by CIDRE [2])    
 -cell and nucleus segmentation by Mask R-CNN [3], [4]  
--feature extraction 
+-feature extraction  
 -normalization by negative control secondary antibodies and RESTORE [5]  
 -single-cell analysis (Cytosplore [6], seaborn)  
 
