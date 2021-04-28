@@ -93,29 +93,20 @@ def main():
     print (predictions[nuclei_idx])
     print ("Path PC iodide mask:" + join(path_phase_preds, predictions[nuclei_idx].split('.')[0].replace("_svg","_mask.TIF")))
     print ("Path nuclear iodide mask:" + join(path_fluor_preds, predictions[nuclei_idx].split('.')[0].replace("_svg","_mask.TIF")))
+
     # Phase contrast mask of Propidiodide staining
     PI_PC_mask = tifffile.imread(join(path_phase_preds, predictions[nuclei_idx].split('.')[0].replace("_svg","_mask.TIF")))
-    Combined_PC_masks = np.ones_like(PI_PC_mask, dtype=np.bool)
 	
     # Read nucleus mask
     PI_Nuclei_mask = tifffile.imread(join(path_fluor_preds, predictions[nuclei_idx].split('.')[0].replace("_svg","_mask.TIF")))
-    
-    for idx, pred in enumerate(predictions):
-        if pred.endswith("_mask.TIF"):
-            masks = tifffile.imread(join(path_phase_preds,pred))
-            # Combination of all phase contrast masks (binary multiplication)
-            Combined_PC_masks = Combined_PC_masks * masks.astype(np.bool) * PI_Nuclei_mask.astype(np.bool)
-
-    # Filter (extend) mask containing phase contrast objects of all Stainings
-    Combined_PC_masks = medfilt2d(Combined_PC_masks.astype(np.float)).astype(np.bool)
 
     # Filter cells according to size and relabel
     cell_th = 40
     nucleus_th = 30
 
     # Keep only intact objects present PI PC mask
-    cell_labels_to_keep = np.unique(PI_PC_mask.astype(np.uint16) * Combined_PC_masks.astype(np.uint16))
-    nuclear_labels_to_keep = np.unique(PI_Nuclei_mask.astype(np.uint16) * Combined_PC_masks.astype(np.uint16))
+    cell_labels_to_keep = np.unique(PI_PC_mask.astype(np.uint16))
+    nuclear_labels_to_keep = np.unique(PI_Nuclei_mask.astype(np.uint16) * (PI_PC_mask>0).astype(np.uint16))
 
     print ("Filtering PC mask ...")
     for celllabel in tqdm(np.unique(PI_PC_mask)):
