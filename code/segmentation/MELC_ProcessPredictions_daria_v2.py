@@ -120,7 +120,7 @@ def main():
     print ("Filtering PC mask ...")
     for celllabel in tqdm(np.unique(PI_PC_mask)):
         if celllabel > 0:
-            if (((PI_PC_mask == celllabel).sum() < cell_th) and (celllabel not in cell_labels_to_keep)):
+            if (((PI_PC_mask == celllabel).sum() < cell_th) or (celllabel not in cell_labels_to_keep)):
                 PI_PC_mask[PI_PC_mask == celllabel] = 0
     PI_PC_mask = lb(PI_PC_mask > 0,connectivity=1)
     print("Remaining cell number: " + str(np.unique(PI_PC_mask).__len__()))
