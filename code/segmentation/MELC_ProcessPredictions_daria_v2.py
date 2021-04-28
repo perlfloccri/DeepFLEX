@@ -113,14 +113,14 @@ def main():
     cell_th = 40
     nucleus_th = 30
 
-    # Keep only intact objects present in all PC masks
+    # Keep only intact objects present PI PC mask
     cell_labels_to_keep = np.unique(PI_PC_mask.astype(np.uint16) * Combined_PC_masks.astype(np.uint16))
     nuclear_labels_to_keep = np.unique(PI_Nuclei_mask.astype(np.uint16) * Combined_PC_masks.astype(np.uint16))
 
     print ("Filtering PC mask ...")
     for celllabel in tqdm(np.unique(PI_PC_mask)):
         if celllabel > 0:
-            if (((PI_PC_mask == celllabel).sum() < cell_th) and (celllabel in cell_labels_to_keep)):
+            if (((PI_PC_mask == celllabel).sum() < cell_th) and (celllabel not in cell_labels_to_keep)):
                 PI_PC_mask[PI_PC_mask == celllabel] = 0
     PI_PC_mask = lb(PI_PC_mask > 0,connectivity=1)
     print("Remaining cell number: " + str(np.unique(PI_PC_mask).__len__()))
@@ -128,7 +128,7 @@ def main():
     print("Filtering nuclear mask ...")
     for nuclearlabel in tqdm(np.unique(PI_Nuclei_mask)):
         if nuclearlabel > 0:
-            if (((PI_Nuclei_mask == nuclearlabel).sum() < nucleus_th) and (nuclearlabel in nuclear_labels_to_keep)):
+            if (((PI_Nuclei_mask == nuclearlabel).sum() < nucleus_th) or (nuclearlabel not in nuclear_labels_to_keep)):
                 PI_Nuclei_mask[PI_Nuclei_mask == nuclearlabel] = 0
     PI_Nuclei_mask = lb(PI_Nuclei_mask > 0,connectivity=1)
     print("Remaining nucleus number: " + str(np.unique(PI_Nuclei_mask).__len__()))
@@ -151,21 +151,15 @@ def main():
                         max_overlap = (tmp * (PI_Nuclei_mask == nuclearlabel)).sum()
                         max_label = nuclearlabel
             if (max_overlap > 0):
-                #tifffile.tifffile.imwrite(r"/workspace/data/cellmask.tiff",(PI_PC_mask==celllabel).astype(np.uint8))
-                #tifffile.tifffile.imwrite(r"/workspace/data/nucleusmask.tiff",(PI_Nuclei_mask==nuclearlabel).astype(np.uint8)) 
-                #cellcontours = cv2.findContours((PI_PC_mask==celllabel).astype(np.uint8), 1, 2)[0]
-                #nucleuscontours = cv2.findContours((PI_Nuclei_mask==nuclearlabel).astype(np.uint8), 1, 2)[0]
                 # Add cell/nucleus to combined mask
                 combined_cell_mask[PI_PC_mask == celllabel] = 0
                 combined_cell_mask += (PI_PC_mask==celllabel).astype(np.uint16) * running_label
                 combined_nucleus_mask[PI_Nuclei_mask == nuclearlabel] = 0
                 combined_nucleus_mask += (PI_Nuclei_mask==nuclearlabel).astype(np.uint16) * running_label
                 running_label +=1
-                #cell_list.append({'cell': cellcontours.copy(), 'nucleus': cv2.findContours((PI_Nuclei_mask==nuclearlabel).astype(np.uint8), 1, 2)[1].copy()})
     print ("Number of remaining cell/nucleus pairs: " + str(running_label))
 
     save_file = join(args.output_path, 'PREDICTIONS.mat')
-    #savemat(save_file, {'predictions': cell_list})
     savemat(save_file, {'cells': combined_cell_mask, 'nuclei': combined_nucleus_mask})
 
 if __name__ == '__main__':
