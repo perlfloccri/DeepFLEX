@@ -21,6 +21,7 @@ The pipeline is based on methods for:
 -single-cell analysis (Cytosplore [6], seaborn)  
 
 A compiled release with all necessary dependencies pre-installed is available from [dockerhub](https://hub.docker.com/repository/docker/imageprocessing29092020/deepflex).	
+Nvidia-docker is required to run the image (for tensorflow-gpu support).
 
 ## Requirements
 
