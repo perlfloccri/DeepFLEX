@@ -50,10 +50,10 @@ Nature Biotechnology.
 Smith, K. et al. (2015). 
 CIDRE: An illumination-correction method for optical microscopy. 
 Nat. Methods, 12, 404-406.  
-<a id="1">[[3]](https://arxiv.org/abs/1907.12975)</a> 
+<a id="1">[[3]](https://ieeexplore.ieee.org/document/9389742)</a> 
 Kromp, F. et al. (2019). 
-Deep Learning architectures for generalized immunofluorescence based nuclear image segmentation. 
-arXiv.  
+Evaluation of Deep Learning Architectures for Complex Immunofluorescence Nuclear Image Segmentation. 
+IEEE.  
 <a id="1">[[4]](https://www.nature.com/articles/s41597-020-00608-w)</a> 
 Kromp, F. et al. (2020). 
 An annotated fluorescence image dataset for training nuclear segmentation methods. 
