@@ -5,7 +5,7 @@
 Deep learning-based single-cell analysis pipeline for FLuorescence multiplEX imaging via MELC (Multi-Epitope Ligand Cartography [1]).  
 
 [Daria Lazic, Florian Kromp et al.  
-**Landscape of Bone Marrow Metastasis in Human Neuroblastoma Unraveled by Transcriptomics and Deep Multiplex Imaging**]([https://doi.org/10.3390/cancers13174311])
+**Landscape of Bone Marrow Metastasis in Human Neuroblastoma Unraveled by Transcriptomics and Deep Multiplex Imaging**](https://doi.org/10.3390/cancers13174311)
 
 <img src="https://github.com/perlfloccri/DeepFLEX/blob/master/deepflex.jpg" alt="alt text" width="300">
     
