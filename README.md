@@ -58,7 +58,7 @@ IEEE.
 Kromp, F. et al. (2020). 
 An annotated fluorescence image dataset for training nuclear segmentation methods. 
 Scientific Data, 7, 262.  
-<a id="1">[[5]](https://onlinelibrary.wiley.com/doi/full/10.1002/mrm.20426)</a> 
+<a id="1">[[5]](https://www.nature.com/articles/s42003-020-0828-1)</a> 
 Chang, Y.H. et al. (2020). 
 RESTORE: Robust intEnSiTy nORmalization mEthod for multiplexed imaging. 
 Commun. Biol., 3, 1-9.  
